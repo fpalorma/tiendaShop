@@ -236,7 +236,11 @@ function actualizarBotonesAgregar() {
         boton.addEventListener("click", agregarAlCarrito)
     })
 }
-const productosEnCarrito = []
+const productosEnCarrito = JSON.parse(localStorage.getItem("productos-en-carrito")) ?? []
+if(productosEnCarrito){
+    actualizarNumerito()
+}
+
 
 function agregarAlCarrito(e) {
 
